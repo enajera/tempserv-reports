@@ -290,7 +290,7 @@ function getAuthoritySecurityLevel(action, dbCode, userid) {
             <property name="dataType">string</property>
             <property name="distinct">true</property>
             <simple-property-list name="defaultValue">
-                <value type="constant">Status: All, Type: All, State: All, I9 Status: All</value>
+                <value type="javascript">Formatter.format(BirtDateTime.today(),"MM/dd/yy")+" thru "+Formatter.format(BirtDateTime.today(),"MM/dd/yy")+"(Voids Included)"</value>
             </simple-property-list>
             <list-property name="selectionList"/>
             <property name="paramType">simple</property>
@@ -4118,8 +4118,9 @@ ORDER BY
                             <list-property name="boundDataColumns">
                                 <structure>
                                     <property name="name">dates_info</property>
-                                    <expression name="expression" type="javascript">params["dates_info"]</expression>
+                                    <expression name="expression" type="javascript">params["middleTopHeader"]</expression>
                                     <property name="dataType">string</property>
+                                    <property name="allowExport">true</property>
                                 </structure>
                             </list-property>
                             <property name="resultSetColumn">dates_info</property>
@@ -5271,8 +5272,9 @@ ORDER BY
                             <list-property name="boundDataColumns">
                                 <structure>
                                     <property name="name">dates_info</property>
-                                    <expression name="expression" type="javascript">params["dates_info"]</expression>
+                                    <expression name="expression" type="javascript">params["middleTopHeader"]</expression>
                                     <property name="dataType">string</property>
+                                    <property name="allowExport">true</property>
                                 </structure>
                             </list-property>
                             <property name="resultSetColumn">dates_info</property>
@@ -6656,8 +6658,9 @@ ORDER BY
                             <list-property name="boundDataColumns">
                                 <structure>
                                     <property name="name">dates_info</property>
-                                    <expression name="expression" type="javascript">params["dates_info"]</expression>
+                                    <expression name="expression" type="javascript">params["middleTopHeader"]</expression>
                                     <property name="dataType">string</property>
+                                    <property name="allowExport">true</property>
                                 </structure>
                             </list-property>
                             <property name="resultSetColumn">dates_info</property>
